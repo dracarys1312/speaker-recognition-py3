@@ -162,7 +162,7 @@ class RecGui(tk.Tk):
         self.recording = True
 
         filename = tempfile.mktemp(
-            prefix='recorded', suffix='.wav', dir='')
+            prefix='test', suffix='.wav', dir='')
 
         if self.audio_q.qsize() != 0:
             print('WARNING: Queue not empty!')
