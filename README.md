@@ -3,10 +3,15 @@ This project is a simple python3 version of [speaker-recognition](https://github
 
 ### difference with speaker-recognition of python2
 + Neither use MFCC implementation of bob nor implement that myself. Use the [python_speech_features](https://github.com/jameslyons/python_speech_features) instead.
-+ Remove the GUI and you can only use the command line to train and predict the model. 
++ Remove the GUI and you can only use the command line to train and predict the model.
 + Replace the function and class in sklearn which will be removed in the later version.
 + Use softmax function to output the probability.
 + convert to mono if the origin audio if stereo.
+
+### Requirement 
+```sh
+pip install -r requirements.txt 
+```
 
 ### Usage
 ```sh
@@ -27,8 +32,8 @@ Note that wildcard inputs should be *quoted*, and they will be sent to glob modu
 
 Examples:
     Train:
-    ./speaker-recognition.py -t enroll -i "/tmp/person* ./mary" -m model.out
+    ./speaker-recognition.py -t enroll -i "./NHQ ./NTD ./NTGH ./NTLA ./NTV ./TTL ./TTM ./VVH ./NPT" -m model.out
 
     Predict:
-    ./speaker-recognition.py -t predict -i "./*.wav" -m model.out
+    ./speaker-recognition.py -t predict -i "./test.wav" -m model.out
 ```

@@ -5,7 +5,6 @@ from features import get_feature
 import time
 
 class ModelInterface:
-
     def __init__(self):
         self.features = defaultdict(list)
         self.gmmset = GMMSet()
