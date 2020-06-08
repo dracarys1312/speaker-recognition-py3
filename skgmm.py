@@ -4,7 +4,7 @@ import numpy as np
 import math
 
 class GMMSet:
-    def __init__(self, gmm_order = 32):
+    def __init__(self, gmm_order = 13):
         self.gmms = []
         self.gmm_order = gmm_order
         self.y = []
