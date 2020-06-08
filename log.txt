@@ -1,0 +1,89 @@
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NHQ
+./test/NHQ/NHQ21.wav -> NHQ , score-> 0.129
+./test/NHQ/NHQ22.wav -> NHQ , score-> 0.129
+./test/NHQ/NHQ23.wav -> NHQ , score-> 0.13
+./test/NHQ/NHQ24.wav -> NHQ , score-> 0.129
+./test/NHQ/NHQ25.wav -> NHQ , score-> 0.13
+./test/NHQ/NHQ26.wav -> NHQ , score-> 0.13
+./test/NHQ/NHQ27.wav -> NHQ , score-> 0.129
+./test/NHQ/NHQ28.wav -> NHQ , score-> 0.13
+./test/NHQ/NHQ29.wav -> NHQ , score-> 0.13
+./test/NHQ/NHQ30.wav -> NHQ , score-> 0.13
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NPT
+./test/NPT/NPT21.wav -> NPT , score-> 0.127
+./test/NPT/NPT22.wav -> NPT , score-> 0.128
+./test/NPT/NPT23.wav -> NPT , score-> 0.128
+./test/NPT/NPT24.wav -> NPT , score-> 0.127
+./test/NPT/NPT25.wav -> NPT , score-> 0.127
+./test/NPT/NPT26.wav -> NTV , score-> 0.127
+./test/NPT/NPT27.wav -> VVH , score-> 0.127
+./test/NPT/NPT28.wav -> NPT , score-> 0.126
+./test/NPT/NPT29.wav -> NPT , score-> 0.128
+./test/NPT/NPT30.wav -> NPT , score-> 0.128
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NTD
+./test/NTD/NTD21.wav -> NTD , score-> 0.127
+./test/NTD/NTD22.wav -> NTD , score-> 0.126
+./test/NTD/NTD23.wav -> NTD , score-> 0.127
+./test/NTD/NTD24.wav -> NTD , score-> 0.129
+./test/NTD/NTD25.wav -> NTD , score-> 0.127
+./test/NTD/NTD26.wav -> NTD , score-> 0.128
+./test/NTD/NTD27.wav -> TTL , score-> 0.126
+./test/NTD/NTD28.wav -> NTD , score-> 0.127
+./test/NTD/NTD29.wav -> NTD , score-> 0.127
+./test/NTD/NTD30.wav -> NTD , score-> 0.129
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NTGH
+./test/NTGH/NTGH21.wav -> NTGH , score-> 0.127
+./test/NTGH/NTGH22.wav -> NTGH , score-> 0.126
+./test/NTGH/NTGH23.wav -> NTGH , score-> 0.126
+./test/NTGH/NTGH24.wav -> NTGH , score-> 0.128
+./test/NTGH/NTGH25.wav -> NTGH , score-> 0.126
+./test/NTGH/NTGH26.wav -> NTGH , score-> 0.127
+./test/NTGH/NTGH27.wav -> NTGH , score-> 0.127
+./test/NTGH/NTGH28.wav -> NTGH , score-> 0.126
+./test/NTGH/NTGH29.wav -> NTGH , score-> 0.126
+./test/NTGH/NTGH30.wav -> NTGH , score-> 0.126
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NTV
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh TTL
+./test/TTL/TTL21.wav -> TTL , score-> 0.133
+./test/TTL/TTL22.wav -> TTL , score-> 0.128
+./test/TTL/TTL23.wav -> TTL , score-> 0.127
+./test/TTL/TTL24.wav -> TTL , score-> 0.127
+./test/TTL/TTL25.wav -> TTL , score-> 0.128
+./test/TTL/TTL26.wav -> TTL , score-> 0.131
+./test/TTL/TTL27.wav -> TTL , score-> 0.129
+./test/TTL/TTL28.wav -> TTM , score-> 0.131
+./test/TTL/TTL29.wav -> TTM , score-> 0.13
+./test/TTL/TTL30.wav -> TTL , score-> 0.129
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh TTM
+./test/TTM/TTM21.wav -> TTL , score-> 0.127
+./test/TTM/TTM22.wav -> TTM , score-> 0.128
+./test/TTM/TTM23.wav -> TTM , score-> 0.128
+./test/TTM/TTM24.wav -> TTM , score-> 0.13
+./test/TTM/TTM25.wav -> TTM , score-> 0.129
+./test/TTM/TTM26.wav -> TTM , score-> 0.13
+./test/TTM/TTM27.wav -> TTM , score-> 0.131
+./test/TTM/TTM28.wav -> TTM , score-> 0.129
+./test/TTM/TTM29.wav -> TTM , score-> 0.13
+./test/TTM/TTM30.wav -> TTM , score-> 0.13
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh VVH
+./test/VVH/VVH21.wav -> VVH , score-> 0.127
+./test/VVH/VVH22.wav -> VVH , score-> 0.127
+./test/VVH/VVH23.wav -> VVH , score-> 0.127
+./test/VVH/VVH24.wav -> VVH , score-> 0.127
+./test/VVH/VVH25.wav -> VVH , score-> 0.127
+./test/VVH/VVH26.wav -> VVH , score-> 0.13
+./test/VVH/VVH27.wav -> NTD , score-> 0.128
+./test/VVH/VVH28.wav -> NTD , score-> 0.127
+./test/VVH/VVH29.wav -> VVH , score-> 0.127
+./test/VVH/VVH30.wav -> VVH , score-> 0.128
+thaonp@ThaoNP:/media/thaonp/40B6B6B1B6B6A6B6/finalDSP/speaker-recognition-py3$ ./masstesting.sh NTV
+./test/NTV/NTV21.wav -> NTV , score-> 0.127
+./test/NTV/NTV22.wav -> NTV , score-> 0.126
+./test/NTV/NTV23.wav -> NTV , score-> 0.127
+./test/NTV/NTV24.wav -> NTV , score-> 0.127
+./test/NTV/NTV25.wav -> NPT , score-> 0.129
+./test/NTV/NTV26.wav -> NPT , score-> 0.128
+./test/NTV/NTV27.wav -> NTV , score-> 0.127
+./test/NTV/NTV28.wav -> NPT , score-> 0.128
+./test/NTV/NTV29.wav -> NPT , score-> 0.129
+./test/NTV/NTV30.wav -> NPT , score-> 0.129
