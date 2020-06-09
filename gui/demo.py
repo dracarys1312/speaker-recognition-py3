@@ -7,7 +7,7 @@ import threading
 import tkinter as tk
 from tkinter import ttk
 from tkinter.simpledialog import Dialog
-
+import pathlib
 import numpy as np
 import sounddevice as sd
 import soundfile as sf
@@ -89,9 +89,6 @@ class RecGui(tk.Tk):
         self.indentify_button.pack(side='left', padx=padding, pady=padding)
 
         f.pack(expand=True, padx=padding, pady=padding)
-
-        # self.file_label = ttk.Label(text='<file name>')
-        # self.file_label.pack(anchor='w')
 
         self.indentify_label = ttk.Label(text='You are <name> \n')
         self.indentify_label.pack(anchor='w')
@@ -201,7 +198,7 @@ class RecGui(tk.Tk):
     def indentify(self, *args):
         stream = os.popen('../speaker-recognition.py -t predict -i "./demo.wav" -m ../model.out')
         output = stream.read()
-        self.indentify_label['text'] = "You are " + output
+        self.indentify_label['text'] = output
 
     def init_buttons(self):
         self.rec_button['text'] = 'record'
@@ -227,7 +224,9 @@ class RecGui(tk.Tk):
     def close_window(self):
         if self.recording:
             self.on_stop()
-        os.remove("demo.wav")
+        if pathlib.Path("demo.wav").exists():
+            print ("File exist")
+            os.remove("demo.wav")
         self.destroy()
 
 

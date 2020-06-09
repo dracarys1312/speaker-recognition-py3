@@ -1,19 +1,34 @@
 ### About
-This project is a simple python3 version of [speaker-recognition](https://github.com/ppwwyyxx/speaker-recognition) and I make a little change for the convenience of command line usage.
+This project is for Digital Signal Processing 2020 project with GUI. Relies heavily on the [python_speech_features](https://github.com/jameslyons/python_speech_features) library. Use softmax function to output the probability. Convert to mono if the origin audio if stereo. Forked from [crouchred/speaker-recognition-py3](https://github.com/crouchred/speaker-recognition-py3/crouchred/speaker-recognition-py3)
 
-### difference with speaker-recognition of python2
-+ Neither use MFCC implementation of bob nor implement that myself. Use the [python_speech_features](https://github.com/jameslyons/python_speech_features) instead.
-+ Remove the GUI and you can only use the command line to train and predict the model.
-+ Replace the function and class in sklearn which will be removed in the later version.
-+ Use softmax function to output the probability.
-+ convert to mono if the origin audio if stereo.
+For more details of this project, please see:
++ Our [presentation slides](https://drive.google.com/file/d/1XVP6a3eVT2zNxvHJGtSgyCAqQ2VecQk_/view?usp=sharing)
++ Our [complete report](https://drive.google.com/file/d/1_uKR-8sr9Yy1jCgaGxb2wQUTpabLGMiy/view?usp=sharing)
 
-### Requirement 
+### Install requirements
 ```sh
-pip install -r requirements.txt 
+Windows:
+pip install -r requirements.txt
+
+Ubuntu:
+pip3 install -r requirements.txt
 ```
 
-### Usage
+## Algorithms Used
+_Feature_: [Mel-Frequency Cepstral Coefficient](http://en.wikipedia.org/wiki/Mel-frequency_cepstrum) (MFCC)
+_Model_: [Gaussian Mixture Model](http://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) (GMM)
+
+## GUI Demo
+Our GUI has basic functionality for recording, and a speaker recognition. In /gui/, start with demo.py
+```sh
+Windows:
+python demo.py
+
+Ubuntu:
+python3 demo.py
+```
+
+### Command Line Tools
 ```sh
 usage: speaker-recognition.py [-h] -t TASK -i INPUT -m MODEL
 
@@ -32,8 +47,8 @@ Note that wildcard inputs should be *quoted*, and they will be sent to glob modu
 
 Examples:
     Train:
-    ./speaker-recognition.py -t enroll -i "./NHQ ./NTD ./NTGH ./NTLA ./NTV ./TTL ./TTM ./VVH ./NPT" -m model.out
+    ./speaker-recognition.py -t enroll -i "./train/Dung ./train/Hien ./train/Huy ./train/Lan ./train/Long ./train/Minh ./train/Quang ./train/Thao ./train/Vinh" -m model.out
 
     Predict:
-    ./speaker-recognition.py -t predict -i "./test.wav" -m model.out
+    ./speaker-recognition.py -t predict -i "./test/*.wav" -m model.out
 ```
