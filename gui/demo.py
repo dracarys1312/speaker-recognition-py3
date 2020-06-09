@@ -1,15 +1,4 @@
-#!/usr/bin/env python3
-"""Simple GUI for recording into a WAV file.
-
-There are 3 concurrent activities: GUI, audio callback, file-writing thread.
-
-Neither the GUI nor the audio callback is supposed to block.
-Blocking in any of the GUI functions could make the GUI "freeze", blocking in
-the audio callback could lead to drop-outs in the recording.
-Blocking the file-writing thread for some time is no problem, as long as the
-recording can be stopped successfully when it is supposed to.
-
-"""
+import os
 import contextlib
 import queue
 import sys
@@ -22,7 +11,6 @@ from tkinter.simpledialog import Dialog
 import numpy as np
 import sounddevice as sd
 import soundfile as sf
-
 
 def file_writing_thread(*, q, **soundfile_args):
     """Write data from queue to file until *None* is received."""
@@ -84,9 +72,9 @@ class RecGui(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.title('Recording GUI')
+        self.title('DEMO')
 
-        padding = 10
+        padding = 20
 
         f = ttk.Frame()
 
@@ -97,10 +85,16 @@ class RecGui(tk.Tk):
             f, text='settings', command=self.on_settings)
         self.settings_button.pack(side='left', padx=padding, pady=padding)
 
+        self.indentify_button = ttk.Button(f)
+        self.indentify_button.pack(side='left', padx=padding, pady=padding)
+
         f.pack(expand=True, padx=padding, pady=padding)
 
-        self.file_label = ttk.Label(text='<file name>')
-        self.file_label.pack(anchor='w')
+        # self.file_label = ttk.Label(text='<file name>')
+        # self.file_label.pack(anchor='w')
+
+        self.indentify_label = ttk.Label(text='You are <name> \n')
+        self.indentify_label.pack(anchor='w')
 
         self.input_overflows = 0
         self.status_label = ttk.Label()
@@ -161,8 +155,7 @@ class RecGui(tk.Tk):
         self.settings_button['state'] = 'disabled'
         self.recording = True
 
-        filename = tempfile.mktemp(
-            prefix='NTLA', suffix='.wav', dir='')
+        filename = 'demo.wav'
 
         if self.audio_q.qsize() != 0:
             print('WARNING: Queue not empty!')
@@ -183,7 +176,7 @@ class RecGui(tk.Tk):
         self.rec_button['text'] = 'stop'
         self.rec_button['command'] = self.on_stop
         self.rec_button['state'] = 'normal'
-        self.file_label['text'] = filename
+        # self.file_label['text'] = filename
 
     def on_stop(self, *args):
         self.rec_button['state'] = 'disabled'
@@ -205,9 +198,17 @@ class RecGui(tk.Tk):
         w = SettingsWindow(self, 'Settings')
         self.create_stream(device=w.result)
 
+    def indentify(self, *args):
+        stream = os.popen('../speaker-recognition.py -t predict -i "./demo.wav" -m ../model.out')
+        output = stream.read()
+        self.indentify_label['text'] = "You are " + output
+
     def init_buttons(self):
         self.rec_button['text'] = 'record'
         self.rec_button['command'] = self.on_rec
+        self.indentify_button['text'] = 'CIA!! Indentify Yourself'
+        self.indentify_button['command'] = self.indentify
+
         if self.stream:
             self.rec_button['state'] = 'normal'
         self.settings_button['state'] = 'normal'
@@ -226,6 +227,7 @@ class RecGui(tk.Tk):
     def close_window(self):
         if self.recording:
             self.on_stop()
+        os.remove("demo.wav")
         self.destroy()
 
 
